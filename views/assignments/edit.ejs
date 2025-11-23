@@ -1,0 +1,36 @@
+<%- include("../partials/header"); %>
+
+<h2 class="mb-4">Edit Assignment</h2>
+
+<form action="/assignments/<%= assignment._id %>" method="POST" class="card p-4 shadow-sm">
+
+    <label>Title</label>
+    <input type="text" name="title" class="form-control mb-3" value="<%= assignment.title %>" required>
+
+    <label>Course Code</label>
+    <input type="text" name="courseCode" class="form-control mb-3" value="<%= assignment.courseCode %>" required>
+
+    <label>Due Date</label>
+    <input type="date" name="dueDate" class="form-control mb-3" value="<%= assignment.dueDate.toISOString().split('T')[0] %>" required>
+
+    <label>Status</label>
+    <select name="status" class="form-select mb-3">
+        <option <%= assignment.status === "Not Started" ? "selected" : "" %>>Not Started</option>
+        <option <%= assignment.status === "In Progress" ? "selected" : "" %>>In Progress</option>
+        <option <%= assignment.status === "Completed" ? "selected" : "" %>>Completed</option>
+    </select>
+
+    <label>Priority</label>
+    <select name="priority" class="form-select mb-3">
+        <option <%= assignment.priority === "Low" ? "selected" : "" %>>Low</option>
+        <option <%= assignment.priority === "Medium" ? "selected" : "" %>>Medium</option>
+        <option <%= assignment.priority === "High" ? "selected" : "" %>>High</option>
+    </select>
+
+    <label>Notes</label>
+    <textarea name="notes" class="form-control mb-4"><%= assignment.notes %></textarea>
+
+    <button class="btn btn-primary">Update</button>
+</form>
+
+<%- include("../partials/footer"); %>
