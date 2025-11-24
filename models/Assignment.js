@@ -1,21 +1,24 @@
+// Assignment schema for MongoDB
+// Defines the structure of each Assignment document
+
 const mongoose = require("mongoose");
 
 const assignmentSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true, // Must be provided
   },
   courseCode: {
     type: String,
-    required: true
+    required: true,
   },
   dueDate: {
     type: Date,
-    required: true
+    required: true, // Must include due date
   },
   status: {
     type: String,
-    enum: ["Not Started", "In Progress", "Completed"],
+    enum: ["Not Started", "In Progress", "Completed"], // Allowed values
     default: "Not Started"
   },
   priority: {
@@ -24,8 +27,9 @@ const assignmentSchema = new mongoose.Schema({
     default: "Medium"
   },
   notes: {
-    type: String
+    type: String // Optional field
   }
 });
 
+// Export the model
 module.exports = mongoose.model("Assignment", assignmentSchema);
