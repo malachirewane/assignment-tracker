@@ -39,24 +39,6 @@ This project was created for INFR3120 – Web & Scripting Programming (Assignmen
 - Bootstrap 5  
 - CSS  
 
-## External Code Used
-
-This project includes small portions of external code within allowed limits (under 10%) as per assignment guidelines:
-
-1. **Express.js Routing Structure**  
-   Basic routing patterns inspired by Express documentation:  
-   https://expressjs.com/en/guide/routing.html
-
-2. **Mongoose Model Syntax**  
-   Reference for schema creation from Mongoose documentation:  
-   https://mongoosejs.com/docs/models.html
-
-3. **Bootstrap 5 Components**  
-   Used Bootstrap classes for layout and styling (buttons, tables, forms):  
-   https://getbootstrap.com/docs/5.3/getting-started/introduction/
-
-All external code has been adapted and documented with comments explaining its purpose.
-
 ## Project Structure
 
 ```
